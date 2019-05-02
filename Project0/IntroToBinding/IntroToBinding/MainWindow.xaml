@@ -1,0 +1,25 @@
+﻿<Window x:Class="IntroToBinding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IntroToBinding"
+        xmlns:data="clr-namespace:IntroToBinding.ViewModel"
+        mc:Ignorable="d"
+        Title="Introduction to Binding" Height="450" Width="800">
+    <!--  
+    The xmlns:data line allows our XAML to access the items 
+    within the ViewModel folder in our project 
+    -->
+
+
+    <!--
+    -->
+    <Window.DataContext>
+        <data:DemoViewModel/>
+    </Window.DataContext>
+    
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Text}"/>
+    </Grid>
+</Window>
