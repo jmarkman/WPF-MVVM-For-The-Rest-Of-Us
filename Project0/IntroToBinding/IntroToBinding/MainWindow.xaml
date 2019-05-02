@@ -13,13 +13,13 @@
     -->
 
 
-    <!--
-    -->
+    <!-- The <Window.DataContext> node is what connects our XAML to our viewmodel. -->
     <Window.DataContext>
         <data:DemoViewModel/>
     </Window.DataContext>
     
     <Grid>
+        <!-- Once we have our data context set up, we can use the power of binding! -->
         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Text}"/>
     </Grid>
 </Window>

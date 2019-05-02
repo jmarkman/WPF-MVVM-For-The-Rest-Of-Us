@@ -27,7 +27,7 @@ namespace IntroToBinding.ViewModel
             }
         }
 
-        // ctor
+        // Constructor
         public DemoViewModel()
         {
             Text = "Hello World";
