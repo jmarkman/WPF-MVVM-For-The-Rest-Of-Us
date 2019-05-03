@@ -2,7 +2,7 @@
 
 The core takeaway of MVVM is that by expending effort early on by splitting your application into independent parts, you make it easier for yourself and others in the future to modify the visual appearance or the underlying logic of your application. For me, a massive hurdle in learning MVVM was being able to connect the dots from a rudimentary example to a small application with several moving parts.
 
-At an absolutely basic level, a WPF MVVM application can be broken into just two parts: a View and a ViewModel. The view is what the user of the program will see on their monitor, while the ViewModel is where most of the code-based magic takes place. Don't worry about Models just yet; MVVM wouldn't be anything without them, but for the utmost barebones example, we only need a View and a ViewModel.
+At an absolutely basic level, a WPF MVVM application can be broken into just two parts: a View and a ViewModel. The view is what the user of the program will see on their monitor, while the ViewModel is where most of the code-based magic takes place. Don't worry about Models just yet; MVVM wouldn't be complete without them, but for the utmost barebones example, we only need a View and a ViewModel.
 
 ## Lay The Foundation: Create a View and a ViewModel
 
@@ -235,3 +235,11 @@ Build your solution again to make sure all is still well, and then run it. You s
 ![The final product!](Images/Project0/IntroToBinding_Final.png)
 
 Congratulations! You created a view and a viewmodel, hooked your view up to your viewmodel, and bound a GUI element's property to a value in the viewmodel!
+
+## Wait. What?
+
+The entire process may seem strange because you went from writing a C# class to represent logic for an application to writing in a markup language to represent elements of a user interface. Markup languages like XML and HTML are used to store data and represent specific pieces of a document. If you're coming from something like WinForms, you're used to dragging UI elements onto a form and customizing them in the codebehind of that form with C#.
+
+What's important to know about XAML is that the nodes in XAML not only represent UI elements, but XAML nodes are directly linked to types defined in the Common Language Runtime (CLR), which means it shares those types with C# and other languages that are powered by the CLR. While the technical specifications of this are far more complex than this summary gives them credit for, the takeaway from XAML nodes being linked to types in the CLR is that the XAML you wrote to define the view will have no trouble communicating with the C# code that you wrote to define the viewmodel. 
+
+You do not have to worry about the underlying connection process. You don't even have to think about it. For now, just relax that knowing the connecting is handled for you under the hood, and the only thing you have to do to bring your View and ViewModel together is use that `DataContext` node in the XAML to point to your ViewModel.
