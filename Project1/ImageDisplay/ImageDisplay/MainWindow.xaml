@@ -23,12 +23,12 @@
                 VerticalAlignment="Center" 
                 Margin="5"/>
             <TextBox 
-                Text="" 
+                Text="{Binding ImageURL, UpdateSourceTrigger=PropertyChanged}" 
                 Width="500" 
                 Height="20" 
                 Margin="5"/>
         </StackPanel>
 
-        <Image Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Image Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Source="{Binding ImageURL}"/>
     </Grid>
 </Window>
