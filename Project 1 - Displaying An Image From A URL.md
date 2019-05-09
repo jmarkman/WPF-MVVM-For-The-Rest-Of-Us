@@ -118,7 +118,7 @@ Remember from the previous project that XAML nodes are directly linked to types 
 
 The cool thing about binding is that it's now possible to handle input as it happens, rather than having to write events in codebehind for every little interaction. For your `<TextBox>`, you can bind its `Text` property to the `ImageURL` property you created in the viewmodel. However, for that `ImageURL` property to update when you or your user places a URL in the textbox, you'll have to specify a trigger that will say, "Alright, it's time to update the `ImageURL` property!" Enter the `UpdateSourceTrigger` property available in WPF.
 
-`UpdateSourceTrigger` is a property associated with binding that allows you to specify what kind of event will pass any updates from the view to the property or properties in your viewmodel. For the purpose of this project, you'll want to use the `PropertyChanged` value of the `UpdateSourceTrigger` property. Your `<TextBox>`'s binding should look like this:
+`UpdateSourceTrigger` is a property associated with binding that allows you to specify what kind of event will pass any updates from the view to the property or properties in your viewmodel. For the purpose of this project, you'll want to use the `PropertyChanged` value of the `UpdateSourceTrigger` property, as it will perform an update any time a change is detected. Your `<TextBox>`'s binding should look like this:
 
 ```xml
 <TextBox
@@ -127,3 +127,17 @@ The cool thing about binding is that it's now possible to handle input as it hap
     Height="20"
     Margin="5"/>
 ```
+
+*A side note about `UpdateSourceTrigger=PropertyChanged` - since this value will cause the property to fire off an update event any time a change is detected, it can quickly and negatively impact the performance of your program. For a program as small as this one, you'll notice absolutely no performance hit. However, if you decide to make a larger program with lots of elements, bindings, views, etc. and use `UpdateSourceTrigger=PropertyChanged` for a good number of the bindings within, your program will start to chug if multiple values start updating at once because the update event will fire on **any** little change.*
+
+Finally, it's no good to have an image URL but no way to display it. Fortunately, the `Source` property of the `<Image>` element accepts URLs as well as filepaths for where to find the image in question, so you can bind the `Source` property to the viewmodel's `ImageURL` property.
+
+```xml
+<Image Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Source="{Binding ImageURL}"/>
+```
+
+Build it (Ctrl + Shift + B or F6) to make sure there are no rogue spelling errors or missing semicolons and press F5 to run it in debug mode. If you don't have an image URL that you'd like to test, here's a picture of Louis Armstrong from his Wikipedia page: https://upload.wikimedia.org/wikipedia/commons/0/0e/Louis_Armstrong_restored.jpg
+
+If all went well, you should be greeted by the soulful face of Ambassador Satch himself.
+
+![Satchmo](Images/Project1/ImageDisplay_Final.png)
