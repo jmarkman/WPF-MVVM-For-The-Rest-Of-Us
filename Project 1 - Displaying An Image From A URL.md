@@ -138,6 +138,6 @@ Finally, it's no good to have an image URL but no way to display it. Fortunately
 
 Build it (Ctrl + Shift + B or F6) to make sure there are no rogue spelling errors or missing semicolons and press F5 to run it in debug mode. If you don't have an image URL that you'd like to test, here's a picture of Louis Armstrong from his Wikipedia page: https://upload.wikimedia.org/wikipedia/commons/0/0e/Louis_Armstrong_restored.jpg
 
-If all went well, you should be greeted by the soulful face of Ambassador Satch himself.
+If all went well and you used the provided link, you should be greeted by the soulful face of Ambassador Satch himself.
 
 ![Satchmo](Images/Project1/ImageDisplay_Final.png)
